@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Спартакиада Энергетиков 2026</title>
+<title>Спартакиада Энергетиков 2027</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -132,10 +132,10 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
 .player-stats { display: flex; gap: 12px; font-size: 13px; }
 .player-stat { display: flex; align-items: center; gap: 4px; }
 
-.year-selector { display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-.year-btn { background: rgba(59, 130, 246, 0.2); color: #94a3b8; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
-.year-btn:hover { background: rgba(59, 130, 246, 0.3); color: white; }
-.year-btn.active { background: #2563eb; color: white; border-color: #60a5fa; }
+.spartakiada-selector { display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+.spartakiada-btn { background: rgba(59, 130, 246, 0.2); color: #94a3b8; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
+.spartakiada-btn:hover { background: rgba(59, 130, 246, 0.3); color: white; }
+.spartakiada-btn.active { background: #2563eb; color: white; border-color: #60a5fa; }
 </style>
 </head>
 <body class="min-h-screen pb-20">
@@ -151,7 +151,7 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
                 <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-lg"><span class="text-xl">⚡</span></div>
                 <div>
                     <h1 class="text-lg md:text-2xl font-black tracking-tight leading-tight">СПАРТАКИАДА</h1>
-                    <p class="text-blue-200 text-[10px] md:text-xs font-medium">МАЙ 2026 • LIVE</p>
+                    <p class="text-blue-200 text-[10px] md:text-xs font-medium">X СПАРТАКИАДА • 2027 • LIVE</p>
                 </div>
             </div>
             <div class="text-right">
@@ -168,11 +168,11 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
             <button onclick="showPage('home')" id="btn-home" class="nav-btn active">🏠 Главная</button>
             <button onclick="showPage('history')" id="btn-history" class="nav-btn">📅 История</button>
             <button onclick="showPage('register-team')" id="btn-register-team" class="nav-btn text-green-400">📝 Регистрация</button>
-            <button onclick="showPage('rosters')" id="btn-rosters" class="nav-btn">📋 Заявки</button>
+            <button onclick="showPage('rosters')" id="btn-rosters" class="nav-btn"> Заявки</button>
             <button onclick="showPage('overall')" id="btn-overall" class="nav-btn">🏆 Зачёт</button>
-            <button onclick="showPage('football')" id="btn-football" class="nav-btn"></button>
+            <button onclick="showPage('football')" id="btn-football" class="nav-btn">⚽</button>
             <button onclick="showPage('volleyball')" id="btn-volleyball" class="nav-btn">🏐</button>
-            <button onclick="showPage('basketball')" id="btn-basketball" class="nav-btn"></button>
+            <button onclick="showPage('basketball')" id="btn-basketball" class="nav-btn">🏀</button>
             <button onclick="showPage('tennis')" id="btn-tennis" class="nav-btn">🏓</button>
             <button onclick="showPage('darts')" id="btn-darts" class="nav-btn"></button>
             <button onclick="showPage('ring')" id="btn-ring" class="nav-btn">🏀</button>
@@ -202,15 +202,19 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
     <div id="page-history" class="page-content hidden">
         <div class="glass-effect rounded-2xl p-4 md:p-6">
             <div class="text-center mb-6">
-                <h2 class="text-2xl md:text-3xl font-black mb-2"> История Спартакиад</h2>
-                <p class="text-slate-400">Выберите год для просмотра результатов</p>
+                <h2 class="text-2xl md:text-3xl font-black mb-2">🏆 История Спартакиад</h2>
+                <p class="text-slate-400">Выберите спартакиаду для просмотра результатов</p>
             </div>
-            <div class="year-selector" id="year-selector">
-                <button class="year-btn" onclick="selectYear(2026)">2026</button>
-                <button class="year-btn active" onclick="selectYear(2025)">2025</button>
-                <button class="year-btn" onclick="selectYear(2024)">2024</button>
-                <button class="year-btn" onclick="selectYear(2023)">2023</button>
-                <button class="year-btn" onclick="selectYear(2022)">2022</button>
+            <div class="spartakiada-selector" id="spartakiada-selector">
+                <button class="spartakiada-btn" onclick="selectSpartakiada('I')">I</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('II')">II</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('III')">III</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('IV')">IV</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('V')">V</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('VI')">VI</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('VII')">VII</button>
+                <button class="spartakiada-btn" onclick="selectSpartakiada('VIII')">VIII</button>
+                <button class="spartakiada-btn active" onclick="selectSpartakiada('IX')">IX</button>
             </div>
             <div id="history-table-container"></div>
         </div>
@@ -244,14 +248,14 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
                             <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="football" class="reg-sport-checkbox"> ⚽ Футбол</label>
                             <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="volleyball" class="reg-sport-checkbox"> 🏐 Волейбол</label>
                             <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="basketball" class="reg-sport-checkbox"> 🏀 Баскетбол</label>
-                            <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="tennis-m" class="reg-sport-checkbox">  Теннис М</label>
-                            <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="tennis-w" class="reg-sport-checkbox"> 🏓 Теннис Ж</label>
-                            <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="darts" class="reg-sport-checkbox">  Дартс</label>
+                            <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="tennis-m" class="reg-sport-checkbox"> 🏓 Теннис М</label>
+                            <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="tennis-w" class="reg-sport-checkbox">  Теннис Ж</label>
+                            <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="darts" class="reg-sport-checkbox"> 🎯 Дартс</label>
                             <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="ring" class="reg-sport-checkbox"> 🏀 Броски</label>
                             <label class="flex items-center gap-2 text-sm"><input type="checkbox" value="rope" class="reg-sport-checkbox"> 🪢 Канат</label>
                         </div>
                     </div>
-                    <button onclick="addRegPlayer()" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-bold mb-3">➕ Добавить игрока в заявку</button>
+                    <button onclick="addRegPlayer()" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-bold mb-3"> Добавить игрока в заявку</button>
                 </div>
                 <div id="reg-players-list" class="space-y-2"></div>
                 <button onclick="submitTeamRegistration()" class="w-full bg-green-600 hover:bg-green-700 py-4 rounded-lg font-bold text-lg">✅ Зарегистрировать команду</button>
@@ -267,7 +271,7 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
                 <div id="po-filters" class="flex flex-wrap gap-2"></div>
             </div>
             <div class="mb-4">
-                <div class="text-sm text-slate-400 mb-2 font-bold">🏆 Выберите вид спорта (можно несколько):</div>
+                <div class="text-sm text-slate-400 mb-2 font-bold"> Выберите вид спорта (можно несколько):</div>
                 <div id="sport-filters" class="flex flex-wrap gap-2"></div>
             </div>
             <div id="rosters-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
@@ -277,12 +281,12 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
     <div id="page-overall" class="page-content hidden">
         <div class="glass-effect rounded-2xl overflow-hidden">
             <div class="p-4 md:p-6 border-b border-slate-700">
-                <h2 class="text-xl md:text-2xl font-bold">🏆 Общий зачёт ПО</h2>
+                <h2 class="text-xl md:text-2xl font-bold"> Общий зачёт ПО</h2>
                 <p class="text-slate-400 text-sm mt-1">Нажмите на команду для подробной статистики</p>
             </div>
             <div class="overflow-x-auto">
                 <table class="stats-table min-w-[600px]">
-                    <thead><tr><th>#</th><th class="text-left">ПО</th><th>⚽</th><th>🏐</th><th></th><th>🏓</th><th>🎯</th><th></th><th>🪢</th><th class="text-yellow-400">СУММА</th></tr></thead>
+                    <thead><tr><th>#</th><th class="text-left">ПО</th><th>⚽</th><th>🏐</th><th>🏀</th><th>🏓</th><th>🎯</th><th>🏀</th><th>🪢</th><th class="text-yellow-400">СУММА</th></tr></thead>
                     <tbody id="overall-body"></tbody>
                 </table>
             </div>
@@ -299,7 +303,7 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
 
     <div id="page-volleyball" class="page-content hidden">
         <div class="glass-effect rounded-2xl p-4 md:p-6">
-            <div class="text-center mb-4"><div class="text-4xl mb-2">🏐</div><h2 class="text-xl md:text-2xl font-bold">Волейбол</h2></div>
+            <div class="text-center mb-4"><div class="text-4xl mb-2"></div><h2 class="text-xl md:text-2xl font-bold">Волейбол</h2></div>
             <div id="volleyball-groups" class="space-y-4 mb-6"></div>
             <div id="volleyball-playoff"></div>
         </div>
@@ -325,14 +329,14 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
 
     <div id="page-darts" class="page-content hidden">
         <div class="glass-effect rounded-2xl p-4 md:p-6">
-            <div class="text-center mb-4"><div class="text-4xl mb-2">🎯</div><h2 class="text-xl md:text-2xl font-bold">Дартс</h2></div>
+            <div class="text-center mb-4"><div class="text-4xl mb-2"></div><h2 class="text-xl md:text-2xl font-bold">Дартс</h2></div>
             <div id="darts-playoff"></div>
         </div>
     </div>
 
     <div id="page-ring" class="page-content hidden">
         <div class="glass-effect rounded-2xl p-4 md:p-6">
-            <div class="text-center mb-4"><div class="text-4xl mb-2"></div><h2 class="text-xl md:text-2xl font-bold">Броски в кольцо</h2></div>
+            <div class="text-center mb-4"><div class="text-4xl mb-2">🏀</div><h2 class="text-xl md:text-2xl font-bold">Броски в кольцо</h2></div>
             <div id="ring-playoff"></div>
         </div>
     </div>
@@ -347,7 +351,7 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
     <div id="page-admin" class="page-content hidden">
         <div class="bg-gradient-to-br from-blue-900 to-black rounded-2xl p-4 md:p-6 border-2 border-blue-600">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl md:text-2xl font-black text-blue-400">🔧 АДМИНИСТРАТОР</h2>
+                <h2 class="text-xl md:text-2xl font-black text-blue-400"> АДМИНИСТРАТОР</h2>
                 <button onclick="logout()" class="text-red-400 text-sm">Выйти</button>
             </div>
             <div class="grid md:grid-cols-2 gap-4 mb-4">
@@ -371,10 +375,10 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
                             <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="volleyball" class="admin-sport-checkbox"> 🏐 Волейбол</label>
                             <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="basketball" class="admin-sport-checkbox"> 🏀 Баскетбол</label>
                             <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="tennis-m" class="admin-sport-checkbox"> 🏓 Теннис М</label>
-                            <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="tennis-w" class="admin-sport-checkbox">  Теннис Ж</label>
+                            <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="tennis-w" class="admin-sport-checkbox"> 🏓 Теннис Ж</label>
                             <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="darts" class="admin-sport-checkbox"> 🎯 Дартс</label>
                             <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="ring" class="admin-sport-checkbox"> 🏀 Броски</label>
-                            <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="rope" class="admin-sport-checkbox"> 🪢 Канат</label>
+                            <label class="flex items-center gap-1 text-xs"><input type="checkbox" value="rope" class="admin-sport-checkbox">  Канат</label>
                         </div>
                     </div>
                     <button onclick="adminAddPlayerToPO()" class="w-full bg-green-600 py-2 rounded-lg font-bold">Добавить игрока</button>
@@ -383,14 +387,17 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
             <div class="bg-slate-800/50 rounded-xl p-4 mb-4 border-2 border-yellow-600/30">
                 <h3 class="font-bold mb-2 text-yellow-400">🏆 Добавить достижение ПО</h3>
                 <select id="admin-achievement-po" class="form-input mb-2"></select>
-                <input type="text" id="admin-achievement-title" placeholder="Например: Победитель Спартакиады 2024" class="form-input mb-2">
-                <select id="admin-achievement-year" class="form-input mb-2">
-                    <option value="2026">2026</option>
-                    <option value="2025">2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
+                <input type="text" id="admin-achievement-title" placeholder="Например: Победитель Спартакиады" class="form-input mb-2">
+                <select id="admin-achievement-spartakiada" class="form-input mb-2">
+                    <option value="I">I Спартакиада</option>
+                    <option value="II">II Спартакиада</option>
+                    <option value="III">III Спартакиада</option>
+                    <option value="IV">IV Спартакиада</option>
+                    <option value="V">V Спартакиада</option>
+                    <option value="VI">VI Спартакиада</option>
+                    <option value="VII">VII Спартакиада</option>
+                    <option value="VIII">VIII Спартакиада</option>
+                    <option value="IX">IX Спартакиада</option>
                 </select>
                 <select id="admin-achievement-type" class="form-input mb-2">
                     <option value="gold">🥇 Золото (1 место)</option>
@@ -411,12 +418,12 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
                 <button onclick="adminAddGroup()" class="w-full bg-purple-600 py-2 rounded-lg font-bold">Создать группу</button>
             </div>
             <div class="bg-slate-800/50 rounded-xl p-4 mb-4 border-2 border-yellow-600/30">
-                <h3 class="font-bold mb-2 text-yellow-400"> Создать матч плей-офф</h3>
+                <h3 class="font-bold mb-2 text-yellow-400">🏆 Создать матч плей-офф</h3>
                 <select id="admin-playoff-sport" class="form-input mb-2">
                     <option value="football">⚽ Футбол</option>
-                    <option value="volleyball"> Волейбол</option>
+                    <option value="volleyball">🏐 Волейбол</option>
                     <option value="basketball">🏀 Баскетбол</option>
-                    <option value="tennis-m">🏓 Теннис М</option>
+                    <option value="tennis-m"> Теннис М</option>
                     <option value="tennis-w">🏓 Теннис Ж</option>
                     <option value="darts">🎯 Дартс</option>
                     <option value="ring">🏀 Броски</option>
@@ -453,7 +460,7 @@ body { background: #0f172a; color: white; margin: 0; padding: 0; }
 <div id="match-protocol-modal" class="modal">
     <div class="glass-effect rounded-2xl max-w-2xl w-full p-4 md:p-6 relative m-4">
         <button onclick="closeModal('match-protocol-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">&times;</button>
-        <h3 class="text-xl md:text-2xl font-bold mb-4 text-center text-blue-400">📋 Протокол матча</h3>
+        <h3 class="text-xl md:text-2xl font-bold mb-4 text-center text-blue-400"> Протокол матча</h3>
         <div id="match-protocol-content"></div>
     </div>
 </div>
@@ -509,7 +516,7 @@ let teams = [], players = [], matches = [], groups = [];
 let isAdmin = false, regPlayers = [], currentMatchEvents = [];
 let selectedPOFilters = new Set();
 let selectedSportFilters = new Set();
-let currentYear = 2025;
+let currentSpartakiada = 'IX';
 const ADMIN_PASSWORD = "admin2026";
 const SPORT_NAMES = {
     'football': '⚽ Футбол', 'volleyball': '🏐 Волейбол', 'basketball': '🏀 Баскетбол',
@@ -560,15 +567,15 @@ function getTeamStats(teamId) {
     return stats;
 }
 
-function getTeamAchievementsForYear(team, year) {
-    return (team.achievements || []).filter(a => a.year === year.toString());
+function getTeamAchievementsForSpartakiada(team, spartakiada) {
+    return (team.achievements || []).filter(a => a.spartakiada === spartakiada);
 }
 
-function selectYear(year) {
-    currentYear = year;
-    document.querySelectorAll('.year-btn').forEach(btn => {
+function selectSpartakiada(spartakiada) {
+    currentSpartakiada = spartakiada;
+    document.querySelectorAll('.spartakiada-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.textContent === year.toString()) btn.classList.add('active');
+        if (btn.textContent === spartakiada) btn.classList.add('active');
     });
     renderHistoryTable();
 }
@@ -577,15 +584,15 @@ function renderHistoryTable() {
     const container = document.getElementById('history-table-container');
     if (!container) return;
     
-    const teamsWithYear = teams.map(t => {
-        const yearAch = getTeamAchievementsForYear(t, currentYear);
-        const goldCount = yearAch.filter(a => a.type === 'gold').length;
-        const silverCount = yearAch.filter(a => a.type === 'silver').length;
-        const bronzeCount = yearAch.filter(a => a.type === 'bronze').length;
-        return { ...t, yearAch, goldCount, silverCount, bronzeCount, totalMedals: goldCount + silverCount + bronzeCount };
+    const teamsWithSpartakiada = teams.map(t => {
+        const spartAch = getTeamAchievementsForSpartakiada(t, currentSpartakiada);
+        const goldCount = spartAch.filter(a => a.type === 'gold').length;
+        const silverCount = spartAch.filter(a => a.type === 'silver').length;
+        const bronzeCount = spartAch.filter(a => a.type === 'bronze').length;
+        return { ...t, spartAch, goldCount, silverCount, bronzeCount, totalMedals: goldCount + silverCount + bronzeCount };
     });
     
-    teamsWithYear.sort((a, b) => {
+    teamsWithSpartakiada.sort((a, b) => {
         if (b.goldCount !== a.goldCount) return b.goldCount - a.goldCount;
         if (b.silverCount !== a.silverCount) return b.silverCount - a.silverCount;
         return b.bronzeCount - a.bronzeCount;
@@ -594,20 +601,20 @@ function renderHistoryTable() {
     let html = `
         <div class="glass-effect rounded-2xl overflow-hidden">
             <div class="p-4 md:p-6 border-b border-slate-700">
-                <h2 class="text-xl md:text-2xl font-bold"> Результаты ${currentYear} года</h2>
+                <h2 class="text-xl md:text-2xl font-bold"> Результаты ${currentSpartakiada} Спартакиады</h2>
                 <p class="text-slate-400 text-sm mt-1">Нажмите на команду для подробной статистики</p>
             </div>
             <div class="overflow-x-auto">
                 <table class="stats-table min-w-[600px]">
-                    <thead><tr><th>#</th><th class="text-left">ПО</th><th>🥇</th><th></th><th>🥉</th><th class="text-yellow-400">Всего</th></tr></thead>
+                    <thead><tr><th>#</th><th class="text-left">ПО</th><th>🥇</th><th>🥈</th><th>🥉</th><th class="text-yellow-400">Всего</th></tr></thead>
                     <tbody>
     `;
     
-    if (teamsWithYear.length === 0) {
-        html += '<tr><td colspan="6" class="p-4 text-center text-slate-400">Нет данных за этот год</td></tr>';
+    if (teamsWithSpartakiada.length === 0) {
+        html += '<tr><td colspan="6" class="p-4 text-center text-slate-400">Нет данных за эту спартакиаду</td></tr>';
     } else {
-        teamsWithYear.forEach((t, i) => {
-            const posBadge = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1);
+        teamsWithSpartakiada.forEach((t, i) => {
+            const posBadge = i === 0 ? '🥇' : i === 1 ? '' : i === 2 ? '' : (i + 1);
             const posClass = i === 0 ? 'bg-yellow-900/20' : i === 1 ? 'bg-slate-600/20' : i === 2 ? 'bg-amber-700/20' : '';
             html += `<tr class="${posClass}" onclick="openTeamProfile('${t.id}')">
                 <td class="font-bold text-lg">${posBadge}</td>
@@ -637,12 +644,15 @@ function openTeamProfile(teamId) {
         if (data.wins > 0) { sportWins[sport] = data.wins; totalWins += data.wins; }
     });
     
-    const achievementsByYear = {};
+    const achievementsBySpartakiada = {};
     achievements.forEach(a => {
-        if (!achievementsByYear[a.year]) achievementsByYear[a.year] = [];
-        achievementsByYear[a.year].push(a);
+        if (!achievementsBySpartakiada[a.spartakiada]) achievementsBySpartakiada[a.spartakiada] = [];
+        achievementsBySpartakiada[a.spartakiada].push(a);
     });
-    const yearsSorted = Object.keys(achievementsByYear).sort((a,b) => b-a);
+    const spartakiadasSorted = Object.keys(achievementsBySpartakiada).sort((a,b) => {
+        const order = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+        return order.indexOf(b) - order.indexOf(a);
+    });
     
     let html = `
         <div class="team-profile-header">
@@ -670,15 +680,15 @@ function openTeamProfile(teamId) {
                     </div>
                 ` : '<p class="text-slate-400 text-center py-4">Пока нет побед</p>'}
             </div>
-            ${yearsSorted.length > 0 ? `
+            ${spartakiadasSorted.length > 0 ? `
                 <div>
                     <h3 class="text-lg font-bold mb-3">📅 История побед</h3>
                     <div class="space-y-3">
-                        ${yearsSorted.map(year => `
+                        ${spartakiadasSorted.map(spart => `
                             <div class="bg-slate-800/50 rounded-lg p-3">
-                                <div class="text-sm font-bold text-yellow-400 mb-2">${year} год</div>
+                                <div class="text-sm font-bold text-yellow-400 mb-2">${spart} Спартакиада</div>
                                 <div class="flex flex-wrap gap-1">
-                                    ${achievementsByYear[year].map(a => `<span class="achievement-badge ${a.type === 'gold' ? '' : a.type === 'silver' ? 'silver' : 'bronze'}">${a.title}</span>`).join('')}
+                                    ${achievementsBySpartakiada[spart].map(a => `<span class="achievement-badge ${a.type === 'gold' ? '' : a.type === 'silver' ? 'silver' : 'bronze'}">${a.title}</span>`).join('')}
                                 </div>
                             </div>
                         `).join('')}
@@ -696,7 +706,7 @@ function openTeamProfile(teamId) {
                             return `<div class="player-row" onclick="openPlayerCard('${p.id}')">
                                 <div class="player-number">${p.number || '?'}</div>
                                 <div class="player-info"><div class="player-name">${p.name}</div><div class="player-meta">${p.position || '—'} ${sp ? '• ' + sp : ''}</div></div>
-                                <div class="player-stats"><div class="player-stat">⚽ <b>${playerGoals}</b></div><div class="player-stat">🟨 <b>${playerCards}</b></div></div>
+                                <div class="player-stats"><div class="player-stat">⚽ <b>${playerGoals}</b></div><div class="player-stat"> <b>${playerCards}</b></div></div>
                             </div>`;
                         }).join('')}
                     </div>
@@ -757,7 +767,7 @@ function renderOverall() {
     const tb = document.getElementById('overall-body');
     if (teams.length === 0) { tb.innerHTML = '<tr><td colspan="10" class="p-4 text-center text-slate-400">Пока нет данных</td></tr>'; return; }
     tb.innerHTML = teams.map((t, i) => {
-        const posBadge = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1);
+        const posBadge = i === 0 ? '' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1);
         const posClass = i === 0 ? 'bg-yellow-900/20' : i === 1 ? 'bg-slate-600/20' : i === 2 ? 'bg-amber-700/20' : '';
         return `<tr class="${posClass}" onclick="openTeamProfile('${t.id}')">
             <td class="font-bold text-lg">${posBadge}</td>
@@ -804,7 +814,7 @@ function renderLiveMatchCard(m) {
             <div class="live-match-score-box"><div class="live-match-score" style="${isFinal?'color:#eab308;font-size:32px':''}">${m.score1} : ${m.score2}</div>${m.sport==='volleyball'&&m.sets?`<div class="text-xs text-slate-400 mt-1">Сеты: ${m.sets.team1||0}:${m.sets.team2||0}</div>`:''}</div>
             <div class="live-match-team" style="flex-direction:row-reverse"><div class="live-match-team-logo" style="${isFinal?'background:#eab308;color:#000':''}">${t2.shortName}</div><div class="live-match-team-name" style="${isFinal?'font-size:16px':''}">${t2.name}</div></div>
         </div>
-        ${isFinal?'<div class="text-center mt-3 text-yellow-400 text-xs font-bold tracking-widest">👑 ГЛАВНЫЙ МАТЧ ТУРНИРА </div>':''}
+        ${isFinal?'<div class="text-center mt-3 text-yellow-400 text-xs font-bold tracking-widest">👑 ГЛАВНЫЙ МАТЧ ТУРНИРА 👑</div>':''}
     </div>`;
 }
 
@@ -845,7 +855,7 @@ function openScorersTable(sport) {
     if (sorted.length === 0) html += '<p class="text-center text-slate-400 py-8">Пока нет результатов</p>';
     else sorted.forEach((item, i) => {
         const team = teams.find(t => t.id === item.player.poId);
-        const posBadge = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i+1);
+        const posBadge = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '' : (i+1);
         html += `<div class="bg-slate-800/50 rounded-lg p-3 flex items-center gap-3"><div class="text-2xl font-bold w-10 text-center">${posBadge}</div><div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center font-bold text-sm overflow-hidden flex-shrink-0">${item.player.photo?`<img src="${item.player.photo}" class="w-full h-full object-cover">`:''}</div><div class="flex-1"><div class="font-bold">${item.player.name}</div><div class="text-sm text-slate-400">${team?team.name:''}</div></div><div class="text-2xl font-black text-yellow-400">${item.goals}</div></div>`;
     });
     html += '</div>';
@@ -857,7 +867,7 @@ function renderMatchCard(m) {
     const t1 = teams.find(t=>t.id===m.team1), t2 = teams.find(t=>t.id===m.team2);
     if (!t1||!t2) return '';
     const isLive = m.status==='live';
-    return `<div class="match-card ${isLive?'live-match':''}" onclick="handleMatchClick('${m.id}')"><div class="match-row"><div class="match-team" onclick="event.stopPropagation();openTeamProfile('${t1.id}')"><div class="match-team-logo">${t1.shortName}</div><div class="match-team-name">${t1.name}</div></div><div class="match-score-box"><div class="match-score">${m.status!=='upcoming'?`${m.score1} : ${m.score2}`:'VS'}</div></div><div class="match-team" style="flex-direction:row-reverse" onclick="event.stopPropagation();openTeamProfile('${t2.id}')"><div class="match-team-logo">${t2.shortName}</div><div class="match-team-name">${t2.name}</div></div></div><div class="flex justify-between items-center mt-2 text-xs"><span class="text-slate-400">${new Date(m.time).toLocaleString('ru-RU')}</span>${isLive?'<span class="live-badge">🔴 LIVE</span>':''}${m.status==='finished'?'<span class="text-green-400">✅ Завершён</span>':''}</div></div>`;
+    return `<div class="match-card ${isLive?'live-match':''}" onclick="handleMatchClick('${m.id}')"><div class="match-row"><div class="match-team" onclick="event.stopPropagation();openTeamProfile('${t1.id}')"><div class="match-team-logo">${t1.shortName}</div><div class="match-team-name">${t1.name}</div></div><div class="match-score-box"><div class="match-score">${m.status!=='upcoming'?`${m.score1} : ${m.score2}`:'VS'}</div></div><div class="match-team" style="flex-direction:row-reverse" onclick="event.stopPropagation();openTeamProfile('${t2.id}')"><div class="match-team-logo">${t2.shortName}</div><div class="match-team-name">${t2.name}</div></div></div><div class="flex justify-between items-center mt-2 text-xs"><span class="text-slate-400">${new Date(m.time).toLocaleString('ru-RU')}</span>${isLive?'<span class="live-badge"> LIVE</span>':''}${m.status==='finished'?'<span class="text-green-400">✅ Завершён</span>':''}</div></div>`;
 }
 
 function calculateGroupStandings(gid) {
@@ -891,8 +901,8 @@ function renderBracket(sport, cid) {
     if (quarter.length>0) { h+='<div class="bracket-round"><div class="bracket-round-title">1/4 ФИНАЛА</div>'; quarter.forEach(m=>{h+=renderBracketMatch(m);}); h+='</div>'; }
     if (semi.length>0) { h+='<div class="bracket-round"><div class="bracket-round-title">1/2 ФИНАЛА</div>'; semi.forEach(m=>{h+=renderBracketMatch(m);}); h+='</div>'; }
     h+='<div class="bracket-round">';
-    if (final) { h+='<div class="bracket-round-title" style="color:#eab308;font-size:16px">🏆 ФИНАЛ 🏆</div>'; h+=renderBracketMatch(final,true,'final-match'); }
-    if (third) { h+='<div class="bracket-round-title" style="color:#f97316;margin-top:30px"> МАТЧ ЗА 3 МЕСТО</div>'; h+=renderBracketMatch(third,false,'third-match'); }
+    if (final) { h+='<div class="bracket-round-title" style="color:#eab308;font-size:16px"> ФИНАЛ 🏆</div>'; h+=renderBracketMatch(final,true,'final-match'); }
+    if (third) { h+='<div class="bracket-round-title" style="color:#f97316;margin-top:30px">🥉 МАТЧ ЗА 3 МЕСТО</div>'; h+=renderBracketMatch(third,false,'third-match'); }
     h+='</div></div></div>'; c.innerHTML = h;
 }
 
@@ -919,12 +929,12 @@ function openMatchProtocol(id) {
         if(e.type==='goal'){ic='⚽';tx=`Гол/Очко: ${p?p.name:'Игрок'}`;cl='event-goal';}
         else if(e.type==='attack'){ic='💥';tx=`Атака: ${p?p.name:'Игрок'}`;cl='event-goal';}
         else if(e.type==='block'){ic='🛡️';tx=`Блок: ${p?p.name:'Игрок'}`;cl='event-goal';}
-        else if(e.type==='serve'){ic='';tx=`Эйс: ${p?p.name:'Игрок'}`;cl='event-goal';}
-        else if(e.type==='yellow'){ic='';tx=`Жёлтая: ${p?p.name:'Игрок'}`;cl='event-yellow';}
-        else if(e.type==='red'){ic='🟥';tx=`Красная: ${p?p.name:'Игрок'}`;cl='event-red';}
+        else if(e.type==='serve'){ic='🎯';tx=`Эйс: ${p?p.name:'Игрок'}`;cl='event-goal';}
+        else if(e.type==='yellow'){ic='🟨';tx=`Жёлтая: ${p?p.name:'Игрок'}`;cl='event-yellow';}
+        else if(e.type==='red'){ic='';tx=`Красная: ${p?p.name:'Игрок'}`;cl='event-red';}
         return `<div class="event-item ${cl}"><div class="event-minute">${e.minute}'</div><div class="flex-1 text-sm">${ic} ${tx} <span class="text-slate-400">(${t?t.shortName:''})</span></div></div>`;
     }).join('');
-    const st = m.status==='live'?'<span class="live-badge"> LIVE</span>':m.status==='finished'?'<span class="text-green-400 font-bold">✅ Завершён</span>':'<span class="text-blue-400">⏳ Ожидает</span>';
+    const st = m.status==='live'?'<span class="live-badge">🔴 LIVE</span>':m.status==='finished'?'<span class="text-green-400 font-bold">✅ Завершён</span>':'<span class="text-blue-400">⏳ Ожидает</span>';
     document.getElementById('match-protocol-content').innerHTML = `<div class="text-center mb-4"><div class="mb-2">${st}</div><div class="text-sm text-slate-400">${new Date(m.time).toLocaleString('ru-RU')}</div></div><div class="flex items-center justify-between mb-4"><div class="text-center flex-1"><div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-2">${t1.shortName}</div><div class="font-bold text-sm">${t1.name}</div></div><div class="px-4"><div class="text-4xl md:text-5xl font-black">${m.status!=='upcoming'?m.score1:0} : ${m.status!=='upcoming'?m.score2:0}</div></div><div class="text-center flex-1"><div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-2">${t2.shortName}</div><div class="font-bold text-sm">${t2.name}</div></div></div><div class="bg-slate-800/50 rounded-xl p-4"><h4 class="font-bold mb-3">📋 События матча</h4><div class="space-y-2 max-h-64 overflow-y-auto">${eh}</div></div>${isAdmin&&m.status!=='finished'?`<button onclick="closeModal('match-protocol-modal');openMatchScore('${m.id}')" class="w-full bg-emerald-600 hover:bg-emerald-700 py-3 rounded-lg font-bold mt-4">✏️ Редактировать</button>`:''}`;
     document.getElementById('match-protocol-modal').classList.add('active');
 }
@@ -940,8 +950,8 @@ function openMatchScore(id) {
         const sets = m.sets || {team1: 0, team2: 0};
         setsHtml = `<div class="bg-slate-800/50 rounded-xl p-3 mb-4"><h4 class="font-bold mb-2 text-sm">📊 Сеты</h4><div class="grid grid-cols-2 gap-3"><div><label class="block text-sm text-slate-400 mb-1">Сеты ${t1.shortName}</label><input type="number" id="sets1-input" value="${sets.team1||0}" min="0" max="5" class="form-input text-xl font-bold text-center"></div><div><label class="block text-sm text-slate-400 mb-1">Сеты ${t2.shortName}</label><input type="number" id="sets2-input" value="${sets.team2||0}" min="0" max="5" class="form-input text-xl font-bold text-center"></div></div></div>`;
     }
-    let eventOptions = '<option value="goal">⚽ Гол/Очко</option><option value="yellow">🟨 Жёлтая</option><option value="red">🟥 Красная</option>';
-    if (m.sport === 'volleyball') eventOptions = '<option value="attack">💥 Атака</option><option value="block">️ Блок</option><option value="serve">🎯 Эйс</option><option value="yellow">🟨 Жёлтая</option><option value="red">🟥 Красная</option>';
+    let eventOptions = '<option value="goal">⚽ Гол/Очко</option><option value="yellow"> Жёлтая</option><option value="red">🟥 Красная</option>';
+    if (m.sport === 'volleyball') eventOptions = '<option value="attack">💥 Атака</option><option value="block">🛡️ Блок</option><option value="serve"> Эйс</option><option value="yellow">🟨 Жёлтая</option><option value="red">🟥 Красная</option>';
     document.getElementById('match-score-content').innerHTML = `<div class="text-center mb-4"><div class="flex items-center justify-between mb-4"><div class="text-center flex-1"><div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-2">${t1.shortName}</div><div class="font-bold text-sm">${t1.name}</div></div><div class="px-4"><div class="text-4xl md:text-5xl font-black">${m.score1} : ${m.score2}</div></div><div class="text-center flex-1"><div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-2">${t2.shortName}</div><div class="font-bold text-sm">${t2.name}</div></div></div></div><div class="grid grid-cols-2 gap-3 mb-4"><div><label class="block text-sm text-slate-400 mb-1">${t1.name}</label><input type="number" id="score1-input" value="${m.score1}" min="0" class="form-input text-2xl font-bold text-center"></div><div><label class="block text-sm text-slate-400 mb-1">${t2.name}</label><input type="number" id="score2-input" value="${m.score2}" min="0" class="form-input text-2xl font-bold text-center"></div></div>${setsHtml}<div class="bg-slate-800/50 rounded-xl p-3 mb-4"><h4 class="font-bold mb-2 text-sm">➕ Добавить событие</h4><div class="grid grid-cols-4 gap-2 mb-2"><select id="event-player" class="form-input text-sm"><option value="">Игрок</option>${[...tp1,...tp2].map(p=>`<option value="${p.id}">${p.name} ${p.number?'(№'+p.number+')':''}</option>`).join('')}</select><select id="event-type" class="form-input text-sm">${eventOptions}</select><input type="number" id="event-minute" placeholder="Мин/Сет" min="1" max="120" class="form-input text-sm"><button onclick="addMatchEvent()" class="bg-blue-600 py-2 rounded-lg font-bold text-sm">Добавить</button></div></div><div class="bg-slate-800/50 rounded-xl p-3 mb-4"><h4 class="font-bold mb-2 text-sm">📋 События</h4><div id="match-events-list" class="space-y-2 max-h-40 overflow-y-auto"></div></div><div class="flex gap-2"><button onclick="updateMatchScore('${m.id}','live')" class="flex-1 bg-red-600 hover:bg-red-700 py-3 rounded-lg font-bold">🔴 LIVE</button><button onclick="updateMatchScore('${m.id}','finished')" class="flex-1 bg-green-600 hover:bg-green-700 py-3 rounded-lg font-bold">✅ Завершить</button></div>`;
     currentMatchEvents = m.events ? JSON.parse(JSON.stringify(m.events)) : [];
     renderMatchEvents();
@@ -996,7 +1006,7 @@ function renderTennisLeague(sport, cid) {
     const sorted = Object.values(st).filter(s=>s.hasPlayer).sort((a,b)=>b.points-a.points||b.won-a.won);
     if (sorted.length===0) { c.innerHTML='<p class="text-slate-400 text-center py-4">Нет данных</p>'; return; }
     let h = `<div class="bg-slate-800/50 rounded-xl p-3 mb-3"><table class="stats-table"><thead><tr><th class="text-left">#</th><th class="text-left">ПО</th><th>И</th><th>В</th><th>П</th><th class="text-yellow-400">О</th></tr></thead><tbody>`;
-    sorted.forEach((s,i)=>{const t=teams.find(x=>x.id===s.teamId);const b=i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);h+=`<tr class="${i<3?'bg-green-900/10':''}" onclick="openTeamProfile('${t.id}')"><td class="text-left font-bold">${b}</td><td class="text-left"><div class="flex items-center gap-2"><div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xs">${t.shortName}</div><span class="font-semibold text-sm">${t.name}</span></div></td><td>${s.played}</td><td class="text-green-400">${s.won}</td><td class="text-red-400">${s.lost}</td><td class="font-bold text-yellow-400">${s.points}</td></tr>`;});
+    sorted.forEach((s,i)=>{const t=teams.find(x=>x.id===s.teamId);const b=i===0?'':i===1?'🥈':i===2?'🥉':(i+1);h+=`<tr class="${i<3?'bg-green-900/10':''}" onclick="openTeamProfile('${t.id}')"><td class="text-left font-bold">${b}</td><td class="text-left"><div class="flex items-center gap-2"><div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xs">${t.shortName}</div><span class="font-semibold text-sm">${t.name}</span></div></td><td>${s.played}</td><td class="text-green-400">${s.won}</td><td class="text-red-400">${s.lost}</td><td class="font-bold text-yellow-400">${s.points}</td></tr>`;});
     h+='</tbody></table></div><h4 class="font-bold mb-2 text-sm">Матчи:</h4><div class="space-y-2">'; lm.forEach(m=>{h+=renderMatchCard(m);}); h+='</div>'; c.innerHTML=h;
 }
 
@@ -1098,17 +1108,17 @@ async function submitTeamRegistration() {
 async function adminAddAchievement() {
     const poId = document.getElementById('admin-achievement-po').value;
     const title = document.getElementById('admin-achievement-title').value;
-    const year = document.getElementById('admin-achievement-year').value;
+    const spartakiada = document.getElementById('admin-achievement-spartakiada').value;
     const type = document.getElementById('admin-achievement-type').value;
     if (!poId) { alert('Выберите ПО!'); return; }
     if (!title) { alert('Введите название достижения!'); return; }
     const team = teams.find(t => t.id === poId);
     if (!team) return;
     const achievements = team.achievements || [];
-    achievements.push({ title, year, type });
+    achievements.push({ title, spartakiada, type });
     await fbUpdate('teams', poId, { achievements });
     document.getElementById('admin-achievement-title').value = '';
-    alert(`Достижение добавлено: ${title} ${year}!`);
+    alert(`Достижение добавлено: ${title} (${spartakiada} Спартакиада)!`);
 }
 
 async function adminAddPlayerToPO() {
@@ -1134,7 +1144,7 @@ async function adminAddPlayerToPO() {
 function renderAdminPOList() {
     document.getElementById('admin-po-list').innerHTML = teams.map(t=>{
         const tp=players.filter(p=>p.poId===t.id);
-        const achievements = (t.achievements || []).map(a => `${a.title} ${a.year}`).join(', ');
+        const achievements = (t.achievements || []).map(a => `${a.title} (${a.spartakiada})`).join(', ');
         return `<div class="bg-slate-900/50 rounded-lg p-3"><div class="flex items-center justify-between mb-2"><div class="flex items-center gap-2"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xs">${t.shortName}</div><span class="font-semibold text-sm">${t.name}</span></div><button onclick="deletePO('${t.id}')" class="bg-red-600 px-3 py-1 rounded text-xs">Удалить</button></div>${achievements?`<div class="text-xs text-yellow-400 mb-2">🏆 ${achievements}</div>`:''}${tp.length>0?`<div class="ml-10 space-y-1">${tp.map(p=>`<div class="flex items-center justify-between text-sm"><span class="text-slate-300">${p.name} <span class="text-slate-500 text-xs">(${(p.sports||[]).map(s=>SPORT_NAMES[s]).join(', ')})</span></span><button onclick="deletePlayer('${p.id}')" class="text-red-400 text-xs">✕</button></div>`).join('')}</div>`:'<div class="ml-10 text-slate-500 text-xs">Нет игроков</div>'}</div>`;
     }).join('');
     const to = teams.map(t=>`<option value="${t.id}">${t.name}</option>`).join('');
