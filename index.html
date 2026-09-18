@@ -594,7 +594,7 @@ function renderHistoryOverall(){
 const container=document.getElementById('history-overall-container');
 if(!container)return;
 const teamsForSpartakiada=calculateOverallForSpartakiada(currentSpartakiada);
-let html=`<div class="glass-effect rounded-2xl overflow-hidden"><div class="p-4 md:p-6 border-b border-slate-700"><h2 class="text-xl md:text-2xl font-bold"> Результаты ${currentSpartakiada} Спартакиады</h2><p class="text-slate-400 text-sm mt-1">Нажмите на команду для подробной статистики</p></div><div class="overflow-x-auto"><table class="stats-table min-w-[600px]"><thead><tr><th>#</th><th class="text-left">ПО</th><th>⚽</th><th>🏐</th><th></th><th>🏓</th><th>🎯</th><th></th><th>🪢</th><th class="text-yellow-400">СУММА</th></tr></thead><tbody>`;
+let html=`<div class="glass-effect rounded-2xl overflow-hidden"><div class="p-4 md:p-6 border-b border-slate-700"><h2 class="text-xl md:text-2xl font-bold">Результаты ${currentSpartakiada} Спартакиады</h2><p class="text-slate-400 text-sm mt-1">Нажмите на команду для подробной статистики</p></div><div class="overflow-x-auto"><table class="stats-table min-w-[600px]"><thead><tr><th>#</th><th class="text-left">ПО</th><th>⚽</th><th>🏐</th><th>🏀</th><th></th><th>🎯</th><th>🏀</th><th></th><th class="text-yellow-400">СУММА</th></tr></thead><tbody>`;
 if(teamsForSpartakiada.length===0){
 html+='<tr><td colspan="10" class="p-4 text-center text-slate-400">Нет данных за эту спартакиаду</td></tr>';
 }else{
@@ -607,7 +607,7 @@ html+=`<tr class="${posClass}" onclick="openTeamProfile('${t.id}')"><td class="f
 html+='</tbody></table></div></div>';
 container.innerHTML=html;
 }
-
+  
 function openTeamProfile(teamId){
 const team=teams.find(t=>t.id===teamId);
 if(!team)return;
